@@ -1,0 +1,118 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+
+
+  
+entity ALU32 is
+    port (
+          clock_alu: in std_logic;                   -- 50MHz clock in the DE10_Lite board
+			 reset_alu: in std_logic;
+			 sw1_alu: in std_logic_vector(2 downto 0);
+			 sw2_alu: in std_logic_vector(2 downto 0);			 
+			 val1_alu: out std_logic_vector(31 downto 0);
+			 val2_alu: out std_logic_vector(31 downto 0);
+			 result_alu: out std_logic_vector(31 downto 0);
+			 I_aluop: in std_logic_vector(5 downto 0);
+			 regD: in std_logic_vector(2 downto 0);
+			 regIndex1: in std_logic_vector(2 downto 0);
+			 regIndex2: in std_logic_vector(2 downto 0);
+			 reg1Val: out std_logic_vector(31 downto 0);
+			 reg2Val: out std_logic_vector(31 downto 0)
+			 );
+end entity;
+
+	
+			 
+architecture rtl of ALU32 is		 
+   type register_type is array (0 to 7) of std_logic_vector(31 downto 0);
+   signal Registers : register_type := (
+   		0 => x"00000000", 
+   		1 => x"00000001", 
+   		2 => x"00000002", 
+   		3 => x"00000003", 
+			4 => x"00000004",
+			5 => x"00000084",
+			6 => x"0000008c",
+			7 => x"000000aa");
+begin
+  process (reset_alu, clock_alu) 
+    variable reg1 : integer range 0 to 7;
+    variable reg2 : integer range 0 to 7;
+    variable sum : integer range 0 to 100;
+	 variable result : std_logic_vector(31 downto 0);
+	 variable carryIn : std_logic;
+	 variable carryOut : std_logic;
+	 variable negate : std_logic_vector(31 downto 0);
+	 variable one    : std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
+	 variable twosComplem : std_logic_vector(31 downto 0);
+	 begin
+	 	if (reset_alu = '1') then
+             val1_alu  <= x"00000000";
+             val2_alu  <= x"00000000";
+             result_alu  <= x"00000000";
+
+	   elsif (rising_edge(clock_alu)) then
+        reg1 := to_integer(unsigned(sw1_alu));
+        reg2 := to_integer(unsigned(sw2_alu));
+		  
+		  reg1Val <= Registers(to_integer(unsigned(regIndex1)));
+		  reg2Val <= Registers(to_integer(unsigned(regIndex2)));
+		  
+		  val1_alu <= Registers(reg1);
+		  val2_alu <= Registers(reg2);
+		  
+		  if (I_aluop = "100000") then -- ADD
+			  carryIn := '0';
+			  
+			  for i in 0 to 31 loop
+				result(i) := (Registers(reg1)(i) xor Registers(reg2)(i)) xor carryIn;
+				carryOut := (Registers(reg1)(i) and Registers(reg2)(i)) or (carryIn and (Registers(reg1)(i) xor Registers(reg2)(i)));
+				carryIn := carryOut;
+			  end loop;
+			  
+			  result_alu <= result;
+			  Registers(to_integer(unsigned(regD))) <= result;
+			  
+		  elsif (I_aluop = "100100") then
+			  result := Registers(reg1) and Registers(reg2);
+			  Registers(to_integer(unsigned(regD))) <= result;
+		  
+		  elsif (I_aluop = "100101") then
+			  result := Registers(reg1) or Registers(reg2);
+			  Registers(to_integer(unsigned(regD))) <= result;
+		  elsif (I_aluop = "100110") then
+			  result := Registers(reg1) xor Registers(reg2);
+			  Registers(to_integer(unsigned(regD))) <= result;
+		  elsif (I_aluop = "100111") then
+			  result := Registers(reg1) nor Registers(reg2);
+			  Registers(to_integer(unsigned(regD))) <= result;
+		  elsif (I_aluop = "100010") then
+			  negate := not(Registers(reg2));
+			  
+			  carryIn := '0';
+			  
+			  for i in 0 to 31 loop --- Add one to do two's complement
+				twosComplem(i) := (negate(i) xor one(i)) xor carryIn;
+				carryOut := (negate(i) and one(i)) or (carryIn and (negate(i) xor one(i)));
+				carryIn := carryOut;
+			  end loop;
+			  
+			  carryIn := '0';
+			  
+			  for i in 0 to 31 loop -- Add reg1 and two's complement of reg2
+				result(i) := (Registers(reg1)(i) xor twosComplem(i)) xor carryIn;
+				carryOut := (Registers(reg1)(i) and twosComplem(i)) or (carryIn and (Registers(reg1)(i) xor twosComplem(i)));
+				carryIn := carryOut;
+			  end loop;
+			  
+			  result_alu <= result;
+			  Registers(to_integer(unsigned(regD))) <= result;
+			  
+		  end if;
+		else
+	   end if;
+	end process;
+end architecture;

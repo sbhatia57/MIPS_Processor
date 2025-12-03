@@ -1,0 +1,1180 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 win64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do debug_run_msim_gate_verilog.do
+# if ![file isdirectory verilog_libs] {
+# 	file mkdir verilog_libs
+# }
+# 
+# vlib verilog_libs/altera_ver
+# ** Warning: (vlib-34) Library already exists at "verilog_libs/altera_ver".
+# Errors: 0, Warnings: 1
+# vmap altera_ver ./verilog_libs/altera_ver
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap altera_ver ./verilog_libs/altera_ver 
+# Copying C:/intelFPGA_lite/24.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:17 on Dec 01,2025
+# vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v 
+# -- Compiling module global
+# -- Compiling module carry
+# -- Compiling module cascade
+# -- Compiling module carry_sum
+# -- Compiling module exp
+# -- Compiling module soft
+# -- Compiling module opndrn
+# -- Compiling module row_global
+# -- Compiling module TRI
+# -- Compiling module lut_input
+# -- Compiling module lut_output
+# -- Compiling module latch
+# -- Compiling module dlatch
+# -- Compiling module prim_gdff
+# -- Compiling module dff
+# -- Compiling module dffe
+# -- Compiling module dffea
+# -- Compiling module dffeas
+# -- Compiling module dffeas_pr
+# -- Compiling module prim_gtff
+# -- Compiling module tff
+# -- Compiling module tffe
+# -- Compiling module prim_gjkff
+# -- Compiling module jkff
+# -- Compiling module jkffe
+# -- Compiling module prim_gsrff
+# -- Compiling module srff
+# -- Compiling module srffe
+# -- Compiling module clklock
+# -- Compiling module alt_inbuf
+# -- Compiling module alt_outbuf
+# -- Compiling module alt_outbuf_tri
+# -- Compiling module alt_iobuf
+# -- Compiling module alt_inbuf_diff
+# -- Compiling module alt_outbuf_diff
+# -- Compiling module alt_outbuf_tri_diff
+# -- Compiling module alt_iobuf_diff
+# -- Compiling module alt_bidir_diff
+# -- Compiling module alt_bidir_buf
+# -- Compiling UDP PRIM_GDFF_LOW
+# -- Compiling UDP PRIM_GDFF_LOW_SCLR_PRIORITY
+# -- Compiling UDP PRIM_GDFF_HIGH
+# -- Compiling UDP PRIM_GDFF_HIGH_SCLR_PRIORITY
+# 
+# Top level modules:
+# 	global
+# 	carry
+# 	cascade
+# 	carry_sum
+# 	exp
+# 	soft
+# 	opndrn
+# 	row_global
+# 	TRI
+# 	lut_input
+# 	lut_output
+# 	latch
+# 	dlatch
+# 	dff
+# 	dffe
+# 	dffea
+# 	dffeas
+# 	dffeas_pr
+# 	tff
+# 	tffe
+# 	jkff
+# 	jkffe
+# 	srff
+# 	srffe
+# 	clklock
+# 	alt_inbuf
+# 	alt_outbuf
+# 	alt_outbuf_tri
+# 	alt_iobuf
+# 	alt_inbuf_diff
+# 	alt_outbuf_diff
+# 	alt_outbuf_tri_diff
+# 	alt_iobuf_diff
+# 	alt_bidir_diff
+# 	alt_bidir_buf
+# End time: 21:31:18 on Dec 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlib verilog_libs/altera_lnsim_ver
+# ** Warning: (vlib-34) Library already exists at "verilog_libs/altera_lnsim_ver".
+# Errors: 0, Warnings: 1
+# vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver 
+# Modifying modelsim.ini
+# vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:19 on Dec 01,2025
+# vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv 
+# -- Compiling package altera_lnsim_functions
+# -- Compiling package altera_generic_pll_functions
+# -- Compiling module generic_pll
+# -- Importing package altera_lnsim_functions
+# -- Importing package altera_generic_pll_functions
+# -- Compiling module generic_cdr
+# -- Compiling module common_28nm_ram_pulse_generator
+# -- Compiling module common_28nm_ram_register
+# -- Compiling module common_28nm_ram_block
+# -- Compiling module generic_m20k
+# -- Compiling module generic_m10k
+# -- Compiling module common_28nm_mlab_cell_pulse_generator
+# -- Compiling module common_28nm_mlab_latch
+# -- Compiling module common_28nm_mlab_cell_core
+# -- Compiling module common_porta_latches
+# -- Compiling module generic_28nm_hp_mlab_cell_impl
+# -- Compiling module common_porta_registers
+# -- Compiling module generic_28nm_lc_mlab_cell_impl
+# -- Compiling module common_28nm_lutram_register
+# -- Compiling module generic_14nm_mlab_cell_impl
+# -- Compiling module common_14nm_lutram_register
+# -- Compiling module generic_mux
+# -- Compiling module generic_device_pll
+# -- Compiling module altera_mult_add
+# -- Compiling module altera_mult_add_rtl
+# -- Compiling module ama_signed_extension_function
+# -- Compiling module ama_dynamic_signed_function
+# -- Compiling module ama_register_function
+# -- Compiling module ama_register_with_ext_function
+# -- Compiling module ama_data_split_reg_ext_function
+# -- Compiling module ama_coef_reg_ext_function
+# -- Compiling module ama_adder_function
+# -- Compiling module ama_multiplier_function
+# -- Compiling module ama_preadder_function
+# -- Compiling module ama_chainout_adder_accumulator_function
+# -- Compiling module ama_systolic_adder_function
+# -- Compiling module ama_scanchain
+# -- Compiling module ama_latency_function
+# -- Compiling module altera_pll_reconfig_tasks
+# -- Compiling module altera_syncram
+# -- Compiling module altera_syncram_forwarding_logic
+# -- Compiling module ALTERA_LNSIM_MEMORY_INITIALIZATION
+# -- Compiling module altera_stratixv_pll
+# -- Compiling module altera_arriav_pll
+# -- Compiling module altera_arriavgz_pll
+# -- Compiling module altera_cyclonev_pll
+# -- Compiling module altera_pll
+# -- Compiling module dps_extra_kick
+# -- Compiling module dprio_init
+# -- Compiling module dps_pulse_gen
+# -- Compiling module altera_iopll
+# -- Compiling module dps_pulse_gen_iopll
+# -- Compiling module twentynm_iopll_arlol
+# -- Compiling module fourteennm_altera_iopll
+# -- Compiling module dps_pulse_gen_fourteennm_iopll
+# -- Compiling package fourteennm_iopll_functions
+# -- Compiling module fourteennm_simple_iopll
+# -- Importing package fourteennm_iopll_functions
+# -- Compiling module fourteennm_sub_iopll
+# -- Compiling module twentynm_iopll_ip
+# -- Compiling module altera_iopll_rotation_lcells
+# -- Compiling module altera_pll_dps_lcell_comb
+# -- Compiling module iopll_bootstrap
+# 
+# Top level modules:
+# 	generic_cdr
+# 	generic_m20k
+# 	generic_m10k
+# 	common_porta_latches
+# 	generic_28nm_hp_mlab_cell_impl
+# 	generic_28nm_lc_mlab_cell_impl
+# 	generic_14nm_mlab_cell_impl
+# 	generic_mux
+# 	generic_device_pll
+# 	altera_mult_add
+# 	altera_pll_reconfig_tasks
+# 	altera_syncram
+# 	altera_pll
+# 	altera_iopll
+# 	fourteennm_altera_iopll
+# 	fourteennm_simple_iopll
+# End time: 21:31:19 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlib verilog_libs/fiftyfivenm_ver
+# ** Warning: (vlib-34) Library already exists at "verilog_libs/fiftyfivenm_ver".
+# Errors: 0, Warnings: 1
+# vmap fiftyfivenm_ver ./verilog_libs/fiftyfivenm_ver
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap fiftyfivenm_ver ./verilog_libs/fiftyfivenm_ver 
+# Modifying modelsim.ini
+# vlog -vlog01compat -work fiftyfivenm_ver {c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/fiftyfivenm_atoms.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:20 on Dec 01,2025
+# vlog -reportprogress 300 -vlog01compat -work fiftyfivenm_ver c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/fiftyfivenm_atoms.v 
+# -- Compiling UDP FIFTYFIVENM_PRIM_DFFE
+# -- Compiling UDP FIFTYFIVENM_PRIM_DFFEAS
+# -- Compiling UDP FIFTYFIVENM_PRIM_DFFEAS_HIGH
+# -- Compiling module fiftyfivenm_dffe
+# -- Compiling module fiftyfivenm_mux21
+# -- Compiling module fiftyfivenm_mux41
+# -- Compiling module fiftyfivenm_and1
+# -- Compiling module fiftyfivenm_and16
+# -- Compiling module fiftyfivenm_bmux21
+# -- Compiling module fiftyfivenm_b17mux21
+# -- Compiling module fiftyfivenm_nmux21
+# -- Compiling module fiftyfivenm_b5mux21
+# -- Compiling module fiftyfivenm_latch
+# -- Compiling module fiftyfivenm_routing_wire
+# -- Compiling module fiftyfivenm_lcell_comb
+# -- Compiling module fiftyfivenm_ff
+# -- Compiling module fiftyfivenm_ram_pulse_generator
+# -- Compiling module fiftyfivenm_ram_register
+# -- Compiling module fiftyfivenm_ram_block
+# -- Compiling module fiftyfivenm_mac_data_reg
+# -- Compiling module fiftyfivenm_mac_sign_reg
+# -- Compiling module fiftyfivenm_mac_mult_internal
+# -- Compiling module fiftyfivenm_mac_mult
+# -- Compiling module fiftyfivenm_mac_out
+# -- Compiling module fiftyfivenm_pseudo_diff_out
+# -- Compiling module fiftyfivenm_io_pad
+# -- Compiling module fiftyfivenm_m_cntr
+# -- Compiling module fiftyfivenm_n_cntr
+# -- Compiling module fiftyfivenm_scale_cntr
+# -- Compiling module fiftyfivenm_pll_reg
+# -- Compiling module fiftyfivenm_pll
+# -- Compiling module fiftyfivenm_ena_reg
+# -- Compiling module fiftyfivenm_clkctrl
+# -- Compiling module fiftyfivenm_io_latch
+# -- Compiling module fiftyfivenm_phy_clkbuf
+# -- Compiling module fiftyfivenm_io_clock_divider
+# -- Compiling module fiftyfivenm_io_ibuf
+# -- Compiling module fiftyfivenm_io_obuf
+# -- Compiling module fiftyfivenm_ddio_out
+# -- Compiling module fiftyfivenm_ddio_oe
+# -- Compiling module fiftyfivenm_ddio_in
+# -- Compiling module fiftyfivenm_unvm
+# -- Compiling module fiftyfivenm_asmiblock
+# -- Compiling module fiftyfivenm_chipidblock
+# -- Compiling module fiftyfivenm_oscillator
+# -- Compiling module fiftyfivenm_controller
+# -- Compiling module fiftyfivenm_crcblock
+# -- Compiling module fiftyfivenm_rublock
+# -- Compiling module fiftyfivenm_jtag
+# -- Compiling module fiftyfivenm_adcblock
+# -- Compiling module fiftyfivenm_phase_detector
+# 
+# Top level modules:
+# 	fiftyfivenm_dffe
+# 	fiftyfivenm_mux21
+# 	fiftyfivenm_and1
+# 	fiftyfivenm_and16
+# 	fiftyfivenm_bmux21
+# 	fiftyfivenm_b17mux21
+# 	fiftyfivenm_nmux21
+# 	fiftyfivenm_b5mux21
+# 	fiftyfivenm_latch
+# 	fiftyfivenm_routing_wire
+# 	fiftyfivenm_lcell_comb
+# 	fiftyfivenm_ff
+# 	fiftyfivenm_ram_block
+# 	fiftyfivenm_mac_mult
+# 	fiftyfivenm_mac_out
+# 	fiftyfivenm_pseudo_diff_out
+# 	fiftyfivenm_io_pad
+# 	fiftyfivenm_pll_reg
+# 	fiftyfivenm_pll
+# 	fiftyfivenm_clkctrl
+# 	fiftyfivenm_io_latch
+# 	fiftyfivenm_phy_clkbuf
+# 	fiftyfivenm_io_clock_divider
+# 	fiftyfivenm_io_ibuf
+# 	fiftyfivenm_io_obuf
+# 	fiftyfivenm_ddio_out
+# 	fiftyfivenm_ddio_oe
+# 	fiftyfivenm_ddio_in
+# 	fiftyfivenm_unvm
+# 	fiftyfivenm_asmiblock
+# 	fiftyfivenm_chipidblock
+# 	fiftyfivenm_oscillator
+# 	fiftyfivenm_controller
+# 	fiftyfivenm_crcblock
+# 	fiftyfivenm_rublock
+# 	fiftyfivenm_jtag
+# 	fiftyfivenm_adcblock
+# 	fiftyfivenm_phase_detector
+# End time: 21:31:20 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work fiftyfivenm_ver {c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/mentor/fiftyfivenm_atoms_ncrypt.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:20 on Dec 01,2025
+# vlog -reportprogress 300 -vlog01compat -work fiftyfivenm_ver c:/intelfpga_lite/24.1std/quartus/eda/sim_lib/mentor/fiftyfivenm_atoms_ncrypt.v 
+# 
+# Top level modules:
+# End time: 21:31:21 on Dec 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work gate_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {debug.vo}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:22 on Dec 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." debug.vo 
+# -- Compiling module debug
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	debug
+# End time: 21:31:23 on Dec 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+cd ..
+# reading C:/intelFPGA_lite/24.1std/questa_fse/win64/../modelsim.ini
+cd ..
+# reading modelsim.ini
+vlib work
+vmap work work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work work 
+# Modifying modelsim.ini
+vcom bp2.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:31:54 on Dec 01,2025
+# vcom -reportprogress 300 bp2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bp2
+# -- Compiling architecture rtl of bp2
+# End time: 21:31:55 on Dec 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom *.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:06 on Dec 01,2025
+# vcom -reportprogress 300 alu_32.vhd bp2.vhd debug.vhd decoder.vhd hex.vhd instruction_mem.vhd store.vhd tb_debug.vhd tb_store.vhd test.vhd util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU32
+# -- Compiling architecture rtl of ALU32
+# ** Error: (vcom-11) Could not find work.alu1bit.
+# ** Error (suppressible): alu_32.vhd(42): (vcom-1195) Cannot find expanded name "work.ALU1Bit".
+# ** Error: alu_32.vhd(42): Unknown expanded name.
+# ** Note: alu_32.vhd(133): VHDL Compiler exiting
+# End time: 21:32:06 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA_lite/24.1std/questa_fse/win64/vcom failed.
+vcom util_pkg.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:20 on Dec 01,2025
+# vcom -reportprogress 300 util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package util_pkg
+# -- Compiling package body util_pkg
+# -- Loading package util_pkg
+# End time: 21:32:20 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom hex.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:23 on Dec 01,2025
+# vcom -reportprogress 300 hex.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity hex
+# -- Compiling architecture Behavioral of hex
+# End time: 21:32:23 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom alu_1.vhdl
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:27 on Dec 01,2025
+# vcom -reportprogress 300 alu_1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU1Bit
+# -- Compiling architecture rtl of ALU1Bit
+# End time: 21:32:27 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom alu_32.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:32 on Dec 01,2025
+# vcom -reportprogress 300 alu_32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU32
+# -- Compiling architecture rtl of ALU32
+# -- Loading entity ALU1Bit
+# End time: 21:32:32 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom decoder.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:35 on Dec 01,2025
+# vcom -reportprogress 300 decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decode
+# -- Compiling architecture Behavioral of decode
+# End time: 21:32:36 on Dec 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom instruction_mem.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:39 on Dec 01,2025
+# vcom -reportprogress 300 instruction_mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture Behavioral of InstructionMemory
+# End time: 21:32:39 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom data_mem.vhdl
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:43 on Dec 01,2025
+# vcom -reportprogress 300 data_mem.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DataMemory
+# -- Compiling architecture Behavioral of DataMemory
+# End time: 21:32:43 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom debug.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:53 on Dec 01,2025
+# vcom -reportprogress 300 debug.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package util_pkg
+# -- Compiling entity debug
+# -- Compiling architecture rtl of debug
+# -- Loading entity ALU32
+# -- Loading entity bp2
+# -- Loading entity DataMemory
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity InstructionMemory
+# -- Loading entity decode
+# -- Loading entity hex
+# End time: 21:32:53 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom *.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:32:58 on Dec 01,2025
+# vcom -reportprogress 300 alu_32.vhd bp2.vhd debug.vhd decoder.vhd hex.vhd instruction_mem.vhd store.vhd tb_debug.vhd tb_store.vhd test.vhd util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU32
+# -- Compiling architecture rtl of ALU32
+# -- Loading entity ALU1Bit
+# -- Compiling entity bp2
+# -- Compiling architecture rtl of bp2
+# -- Loading package util_pkg
+# -- Compiling entity debug
+# -- Compiling architecture rtl of debug
+# -- Loading entity ALU32
+# -- Loading entity bp2
+# -- Loading entity DataMemory
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity InstructionMemory
+# -- Loading entity decode
+# -- Loading entity hex
+# -- Compiling entity decode
+# -- Compiling architecture Behavioral of decode
+# -- Compiling entity hex
+# -- Compiling architecture Behavioral of hex
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture Behavioral of InstructionMemory
+# -- Compiling entity Store
+# -- Compiling architecture rtl of Store
+# -- Compiling entity tb_debug
+# -- Compiling architecture sim of tb_debug
+# -- Loading entity debug
+# -- Compiling entity tb_store
+# -- Compiling architecture sim of tb_store
+# -- Compiling package util_pkg
+# -- Compiling package body util_pkg
+# -- Loading package util_pkg
+# End time: 21:32:58 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_debug
+# vsim work.tb_debug 
+# Start time: 21:33:05 on Dec 01,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.util_pkg(body)
+# Loading work.tb_debug(sim)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.debug(rtl)#1
+# Loading work.alu1bit(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_debug/uut/LEDR(9 downto 0) has no driver.
+# This port will contribute value (10'hXXX) to the signal network.
+run 30 us
+# ** Note: Simulation starting...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=0 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='0' EX_RegW='0' MEM_RegW='0'
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=1 IF=0x20010004 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='0'
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 360 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=0
+#    Time: 360 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 360 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=5 IF=0x20020004 ID_EX=0x20010004 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=1 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='0'
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=9 IF=0x08000000 ID_EX=0x20020004 EX_RES=0x00000004 EX_regD=1 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=2 EX_MEM_regD=1 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 880 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=0
+#    Time: 880 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=13 IF=0x00000000 ID_EX=0x08000000 EX_RES=0x00000004 EX_regD=2 MEM_WB_res=0x00000004 MEM_WB_regD=1 stall='0'
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=2 MEM_WB_regD=1 ID_EX_RegW='0' EX_RegW='1' MEM_RegW='1'
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $1 <= 0x00000004 (opcode=8)
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 1140 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=17 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000004 MEM_WB_regD=2 stall='0'
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=2 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='1'
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $2 <= 0x00000004 (opcode=8)
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: CYCLE=0 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='0' EX_RegW='1' MEM_RegW='0'
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=4 IF=0x20010004 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='1'
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 1920 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=0
+#    Time: 1920 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 1920 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=8 IF=0x20030002 ID_EX=0x20010004 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=1 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='0'
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 2180 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=4
+#    Time: 2180 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=2
+#    Time: 2180 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=12 IF=0x00000000 ID_EX=0x20030002 EX_RES=0x00000004 EX_regD=1 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=3 EX_MEM_regD=1 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=2 Result=2
+#    Time: 2440 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=3 Result=0
+#    Time: 2440 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=16 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000002 EX_regD=3 MEM_WB_res=0x00000004 MEM_WB_regD=1 stall='0'
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=3 MEM_WB_regD=1 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=2 aligned=0 data=287454020
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $1 <= 0x00000004 (opcode=8)
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 2700 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=20 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000003 EX_regD=0 MEM_WB_res=0x00000002 MEM_WB_regD=3 stall='0'
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=3 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=3 aligned=0 data=287454020
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $3 <= 0x00000002 (opcode=8)
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: CYCLE=24 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000003 MEM_WB_regD=0 stall='0'
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=28 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=32 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=36 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=40 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=44 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=48 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=52 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=56 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=60 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=64 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=68 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=72 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=76 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=80 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=84 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=88 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=92 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: FINAL REGS: $0=0x00000000 $1=0x00000004 $2=0x00000004 $3=0x00000002 $4=0x00000004 $5=0x00000084 $6=0x0000008C $7=0x000000AA
+#    Time: 7900 ns  Iteration: 1  Instance: /tb_debug/uut
+# ** Note: Simulation finished (TB).
+#    Time: 8 us  Iteration: 0  Instance: /tb_debug
+exit -sim
+# End time: 21:35:17 on Dec 01,2025, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 4
+vsim work.tb_store
+# vsim work.tb_store 
+# Start time: 21:36:01 on Dec 01,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_store(sim)#1
+run 100 ns
+# ** Note: WRITE (sw) addr=0 data=66
+#    Time: 5 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=0 aligned=0 data=66
+#    Time: 15 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SW Test FAILED: Memory[0] = 287454020
+#    Time: 15 ns  Iteration: 1  Instance: /tb_store
+# ** Note: WRITE (sh) addr=4 data=4660
+#    Time: 25 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 25 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=4 aligned=4 data=305428360
+#    Time: 35 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SH Test FAILED: Memory[4] = 21862
+#    Time: 35 ns  Iteration: 1  Instance: /tb_store
+# ** Note: WRITE (sb) addr=8 data=171
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1430532900 is not in bounds of subtype NATURAL.
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1430532899
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SB Test FAILED: Memory[8] = 170
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store
+# ** Note: STORE TEST SIMULATION FINISHED
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 65 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 65 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 75 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 75 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 85 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 85 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 95 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 95 ns  Iteration: 1  Instance: /tb_store/UUT
+exit -sim
+# End time: 21:39:09 on Dec 01,2025, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 6
+vcom tb_store.vhd
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:39:14 on Dec 01,2025
+# vcom -reportprogress 300 tb_store.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_store
+# -- Compiling architecture sim of tb_store
+# End time: 21:39:14 on Dec 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_store
+# vsim work.tb_store 
+# Start time: 21:39:21 on Dec 01,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_store(sim)#1
+run 100 ns
+# ** Note: Starting TEST 1: Store Word (sw)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_store
+# ** Note: WRITE (sw) addr=0 data=66
+#    Time: 5 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=0 aligned=0 data=66
+#    Time: 15 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SW Test PASSED: Memory[0] = 66
+#    Time: 16 ns  Iteration: 0  Instance: /tb_store
+# ** Note: Starting TEST 2: Store Halfword (sh)
+#    Time: 16 ns  Iteration: 0  Instance: /tb_store
+# ** Note: WRITE (sh) addr=4 data=4660
+#    Time: 25 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 25 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=4 aligned=4 data=305428360
+#    Time: 35 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SH Test PASSED: Memory[4] = 4660
+#    Time: 36 ns  Iteration: 0  Instance: /tb_store
+# ** Note: Starting TEST 3: Store Byte (sb)
+#    Time: 36 ns  Iteration: 0  Instance: /tb_store
+# ** Note: WRITE (sb) addr=8 data=171
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1430532900 is not in bounds of subtype NATURAL.
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1430532899
+#    Time: 45 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 55 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: SB Test PASSED: Memory[8] = 171
+#    Time: 56 ns  Iteration: 0  Instance: /tb_store
+# ** Note: ========================================
+#    Time: 56 ns  Iteration: 0  Instance: /tb_store
+# ** Note: STORE TEST SIMULATION FINISHED
+#    Time: 56 ns  Iteration: 0  Instance: /tb_store
+# ** Note: ========================================
+#    Time: 56 ns  Iteration: 0  Instance: /tb_store
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 65 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 65 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 75 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 75 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 85 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 85 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -1413755684 is not in bounds of subtype NATURAL.
+#    Time: 95 ns  Iteration: 1  Instance: /tb_store/UUT
+# ** Note: READ addr=8 aligned=8 data=-1413755683
+#    Time: 95 ns  Iteration: 1  Instance: /tb_store/UUT
+exit -sim
+# End time: 21:40:07 on Dec 01,2025, Elapsed time: 0:00:46
+# Errors: 0, Warnings: 6
+vsim work.tb_debug
+# vsim work.tb_debug 
+# Start time: 21:40:12 on Dec 01,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.util_pkg(body)
+# Loading work.tb_debug(sim)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.debug(rtl)#1
+# Loading work.alu1bit(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_debug/uut/LEDR(9 downto 0) has no driver.
+# This port will contribute value (10'hXXX) to the signal network.
+run 30 us
+# ** Note: Simulation starting...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=0 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='0' EX_RegW='0' MEM_RegW='0'
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 100 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=1 IF=0x20010004 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='0'
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 360 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 360 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=0
+#    Time: 360 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 360 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=5 IF=0x20020004 ID_EX=0x20010004 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=1 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='0'
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 620 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=9 IF=0x08000000 ID_EX=0x20020004 EX_RES=0x00000004 EX_regD=1 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=2 EX_MEM_regD=1 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 880 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 880 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=0
+#    Time: 880 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=13 IF=0x00000000 ID_EX=0x08000000 EX_RES=0x00000004 EX_regD=2 MEM_WB_res=0x00000004 MEM_WB_regD=1 stall='0'
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=2 MEM_WB_regD=1 ID_EX_RegW='0' EX_RegW='1' MEM_RegW='1'
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $1 <= 0x00000004 (opcode=8)
+#    Time: 1140 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 1140 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=17 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000004 MEM_WB_regD=2 stall='0'
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=2 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='1'
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $2 <= 0x00000004 (opcode=8)
+#    Time: 1400 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: CYCLE=0 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='0' EX_RegW='1' MEM_RegW='0'
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1660 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=4 IF=0x20010004 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='0' MEM_RegW='1'
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 1920 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 1920 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=0
+#    Time: 1920 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 1920 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=8 IF=0x20030002 ID_EX=0x20010004 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=1 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='0'
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 2180 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=4 Result=4
+#    Time: 2180 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=4
+#    Time: 2180 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=2 Result=2
+#    Time: 2180 ns  Iteration: 6  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=12 IF=0x00000000 ID_EX=0x20030002 EX_RES=0x00000004 EX_regD=1 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=3 EX_MEM_regD=1 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=4 aligned=4 data=1432778632
+#    Time: 2440 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: ALU32: val1=0 val2=2 Result=2
+#    Time: 2440 ns  Iteration: 3  Instance: /tb_debug/uut/My_ALU
+# ** Note: ALU32: val1=0 val2=3 Result=0
+#    Time: 2440 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=16 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000002 EX_regD=3 MEM_WB_res=0x00000004 MEM_WB_regD=1 stall='0'
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=3 MEM_WB_regD=1 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=2 aligned=0 data=287454020
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $1 <= 0x00000004 (opcode=8)
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: ALU32: val1=0 val2=0 Result=0
+#    Time: 2700 ns  Iteration: 4  Instance: /tb_debug/uut/My_ALU
+# ** Note: CYCLE=20 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000003 EX_regD=0 MEM_WB_res=0x00000002 MEM_WB_regD=3 stall='0'
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=3 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=3 aligned=0 data=287454020
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: WB: writing $3 <= 0x00000002 (opcode=8)
+#    Time: 2960 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: CYCLE=24 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000003 MEM_WB_regD=0 stall='0'
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=28 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3480 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=32 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 3740 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=36 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4 us  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=40 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4260 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=44 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4520 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=48 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 4780 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=52 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5040 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=56 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5300 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=60 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5560 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=64 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 5820 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=68 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6080 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=72 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6340 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=76 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6600 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=80 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 6860 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=84 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7120 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=88 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7380 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: CYCLE=92 IF=0x00000000 ID_EX=0x00000000 EX_RES=0x00000000 EX_regD=0 MEM_WB_res=0x00000000 MEM_WB_regD=0 stall='0'
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: DST: ID_EX_regD=0 EX_MEM_regD=0 MEM_WB_regD=0 ID_EX_RegW='1' EX_RegW='1' MEM_RegW='1'
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut
+# ** Note: READ addr=0 aligned=0 data=287454020
+#    Time: 7640 ns  Iteration: 2  Instance: /tb_debug/uut/U_DataRAM
+# ** Note: FINAL REGS: $0=0x00000000 $1=0x00000004 $2=0x00000004 $3=0x00000002 $4=0x00000004 $5=0x00000084 $6=0x0000008C $7=0x000000AA
+#    Time: 7900 ns  Iteration: 1  Instance: /tb_debug/uut
+# ** Note: Simulation finished (TB).
+#    Time: 8 us  Iteration: 0  Instance: /tb_debug
+# End time: 21:42:04 on Dec 01,2025, Elapsed time: 0:01:52
+# Errors: 0, Warnings: 4

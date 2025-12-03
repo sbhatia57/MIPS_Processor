@@ -1,0 +1,42 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity InstructionMemory is
+    Port ( I_clk : in  STD_LOGIC;
+           I_addr : in  STD_LOGIC_VECTOR (15 downto 0);
+           O_data : out  STD_LOGIC_VECTOR (31 downto 0));
+end InstructionMemory;
+
+architecture Behavioral of InstructionMemory is
+	type store_t is array (0 to 127) of std_logic_vector(31 downto 0);
+   signal InstructionMemory: store_t := (
+		0 => "00000000111001110000100000100000", -- add
+		1 => "00000000111001010001000000100010", -- subtract
+		2 => "00000000001000100001100000100100", -- and
+		3 => "00000000001000100010000000100101", -- or
+		4 => "00000000001000100010100000100110", --- xor
+      5 => "00000000001000100011000000100111", --- nor
+		6 => "00000000011000100011100000101010", --- slt
+		7 => "00000000110000100001000000101001", --- sltu
+		8 => "00000000000000010011100101000000", --- sll
+		9 => "00000000000000010011000101000010", --- srl
+		10 =>"00000000000001000010100101000011", --- sra
+		11 =>"00000000001000110010000000000100", --- sllv 
+		12 =>"00000000001001100001100000000110", --- srlv
+		13 =>"00000000111001010001000000000111", --- srav
+		14 =>"00000000110001010000100000100001", --- addu
+		15 =>"00000000010000010001100000100011", --- subu 
+		others => (others => '0')
+		);
+begin
+
+	process (I_clk)
+	begin
+		if rising_edge(I_clk) then
+			O_data <= InstructionMemory(to_integer(unsigned(I_addr(5 downto 0))));
+		end if;
+	end process;
+
+end Behavioral;

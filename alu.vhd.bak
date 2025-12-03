@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+
+  
+entity ALU is
+    port (
+          clock_alu: in std_logic;                   -- 50MHz clock in the DE10_Lite board
+			 reset_alu: in std_logic;
+			 val1: out std_logic_vector(31 downto 0);
+			 val2: out std_logic_vector(31 downto 0);
+			 result: out std_logic_vector(31 downto 0);
+			 );	  
+   type register_type is array (0 to 31) of std_logic_vector(31 downto 0);
+   signal Registers : register_type := (
+   		0 => x"00000000", 
+			4 => x"00000004",
+			5 => x"00000084",
+			6 => x"0000008c",
+			7 => x"00000001",
+			others => x"00000000");

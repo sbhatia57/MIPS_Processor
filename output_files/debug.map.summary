@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon Dec  1 21:30:08 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : debug
+Top-level Entity Name : debug
+Family : MAX 10
+Total logic elements : 8,191
+    Total combinational functions : 4,303
+    Dedicated logic registers : 4,266
+Total registers : 4266
+Total pins : 66
+Total virtual pins : 0
+Total memory bits : 104
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

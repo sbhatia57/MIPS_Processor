@@ -1,0 +1,14 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/alu.vhd}
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/hex.vhd}
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/decoder.vhd}
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/ram16.vhd}
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/alu_32.vhd}
+vcom -93 -work work {C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_9_22_25/debug/debug/debug.vhd}
+

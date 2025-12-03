@@ -1,0 +1,324 @@
+m255
+K4
+z2
+!s11e vcom 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/simulation/questa
+Ealu1bit
+Z1 w1761408765
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+R0
+Z4 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_1.vhdl
+Z5 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_1.vhdl
+l0
+L4 1
+V6Vac4IQmZ[TRKQQThJoQ81
+!s100 87h>b_K0^g6=W@8NXVdI32
+Z6 OL;C;2024.3;79
+31
+Z7 !s110 1762709068
+!i10b 1
+Z8 !s108 1762709068.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_1.vhdl|
+Z10 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_1.vhdl|
+!i113 0
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+Z13 DEx4 work 7 alu1bit 0 22 6Vac4IQmZ[TRKQQThJoQ81
+!i122 2
+l17
+L16 65
+VB5[z1oJ>69AdQzM_I]^8m3
+!s100 U2]ARe8BkDDEG0R:LY;g?2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Ealu32
+Z14 w1761443336
+Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 5
+R0
+Z16 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_32.vhd
+Z17 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_32.vhd
+l0
+L5 1
+VCD2c`5nE;Ol05mXkoLhck2
+!s100 T:[PQA`8AfHT2^<`RR_VY2
+R6
+31
+Z18 !s110 1762709069
+!i10b 1
+Z19 !s108 1762709069.000000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_32.vhd|
+Z21 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/alu_32.vhd|
+!i113 0
+R11
+R12
+Artl
+R13
+R15
+R2
+R3
+Z22 DEx4 work 5 alu32 0 22 CD2c`5nE;Ol05mXkoLhck2
+!i122 5
+l23
+L16 90
+VA^05dG?IkCdo48PAM=kJ60
+!s100 O[WMCOW^hDYzhoZPYg9;_1
+R6
+31
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R11
+R12
+Edatamemory
+Z23 w1762273127
+R15
+R2
+R3
+!i122 4
+R0
+Z24 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/data_mem.vhdl
+Z25 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/data_mem.vhdl
+l0
+L5 1
+VTdh34ikOG?mP@g_kzaBhP2
+!s100 YbS`538dJ=]EkZzk@fBTW3
+R6
+31
+R18
+!i10b 1
+R19
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/data_mem.vhdl|
+Z27 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/data_mem.vhdl|
+!i113 0
+R11
+R12
+Abehavioral
+R15
+R2
+R3
+Z28 DEx4 work 10 datamemory 0 22 Tdh34ikOG?mP@g_kzaBhP2
+!i122 4
+l26
+L16 63
+V1e0C>XXH=ERAHdHBGk<Cg3
+!s100 O87F^@[eCTkM4GcFN:g873
+R6
+31
+R18
+!i10b 1
+R19
+R26
+R27
+!i113 0
+R11
+R12
+Edebug
+Z29 w1762708715
+R15
+R2
+R3
+!i122 6
+R0
+Z30 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/debug.vhd
+Z31 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/debug.vhd
+l0
+L5 1
+VJD1DJFj@Db_ZcdSBGNX=02
+!s100 7W]Oe8MeRc7T?CG`BG1<32
+R6
+31
+Z32 !s110 1762709070
+!i10b 1
+R19
+Z33 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/debug.vhd|
+!s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/debug.vhd|
+!i113 0
+R11
+R12
+Artl
+Z34 DEx4 work 3 hex 0 22 _[;9c]J^9H^Y]?Ya7h7OS1
+Z35 DEx4 work 6 decode 0 22 H]daM3_TVlVA8zGY=C1`d1
+Z36 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z37 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z38 DEx4 work 17 instructionmemory 0 22 NzDAm5nZ];9M?SM]?GC@_2
+R28
+R22
+R15
+R2
+R3
+DEx4 work 5 debug 0 22 JD1DJFj@Db_ZcdSBGNX=02
+!i122 6
+l89
+L20 306
+Vgin>b=VA^?^hd1mHeKemM1
+!s100 4Dn4@biJ_B0V>f7@O7o4b0
+R6
+31
+R32
+!i10b 1
+R19
+R33
+Z39 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/debug.vhd|
+!i113 0
+R11
+R12
+Edecode
+Z40 w1762228412
+R15
+R36
+R37
+R2
+R3
+!i122 1
+R0
+Z41 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/decoder.vhd
+Z42 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/decoder.vhd
+l0
+L9 1
+VH]daM3_TVlVA8zGY=C1`d1
+!s100 LZM72]4XhX_=1V<ggke0I1
+R6
+31
+R7
+!i10b 1
+R8
+Z43 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/decoder.vhd|
+Z44 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/decoder.vhd|
+!i113 0
+R11
+R12
+Abehavioral
+R15
+R36
+R37
+R2
+R3
+R35
+!i122 1
+l30
+L27 82
+V]HBJ:S4cdXj4e?>0B_Z9Y0
+!s100 jgFZnF0>1d:14`eniIeFU0
+R6
+31
+R7
+!i10b 1
+R8
+R43
+R44
+!i113 0
+R11
+R12
+Ehex
+Z45 w1759595936
+R2
+R3
+!i122 0
+R0
+Z46 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/hex.vhd
+Z47 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/hex.vhd
+l0
+L5 1
+V_[;9c]J^9H^Y]?Ya7h7OS1
+!s100 1Q1VZao_R29HRTA:D>2`Y2
+R6
+31
+R7
+!i10b 1
+Z48 !s108 1762709067.000000
+Z49 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/hex.vhd|
+Z50 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/hex.vhd|
+!i113 0
+R11
+R12
+Abehavioral
+R2
+R3
+R34
+!i122 0
+l13
+L12 20
+VmUeahzOPM>]gD<UeUWL0V3
+!s100 mDFlWT5dW>bNhJ>h28Tz]3
+R6
+31
+R7
+!i10b 1
+R48
+R49
+R50
+!i113 0
+R11
+R12
+Einstructionmemory
+Z51 w1762224023
+R15
+R36
+R37
+R2
+R3
+!i122 3
+R0
+Z52 8C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/instruction_mem.vhd
+Z53 FC:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/instruction_mem.vhd
+l0
+L6 1
+VNzDAm5nZ];9M?SM]?GC@_2
+!s100 hnl6SD02Pc6zWRh_70_NF0
+R6
+31
+R18
+!i10b 1
+R8
+Z54 !s90 -reportprogress|300|-93|-work|work|C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/instruction_mem.vhd|
+Z55 !s107 C:/Users/sbhat/OneDrive/Documents/CSU_Fall_2025/CIS_600/Project_11_12_25/debug/debug/instruction_mem.vhd|
+!i113 0
+R11
+R12
+Abehavioral
+R15
+R36
+R37
+R2
+R3
+R38
+!i122 3
+l49
+L12 47
+Vob6dJ0]KSEhFZmUghGhM;2
+!s100 =;O]<CF=Y[7i@FML8BBF[1
+R6
+31
+R18
+!i10b 1
+R8
+R54
+R55
+!i113 0
+R11
+R12

@@ -1,0 +1,260 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+
+  
+entity debug is
+    port (
+          CLOCK_50: in std_logic;                   -- 50MHz clock in the DE10_Lite board
+          KEY: in std_logic_vector (1 downto 0);    -- keys or buttons (KEY(0)- KEY(1))
+          SW: in std_logic_vector (9 downto 0);     -- switches (SW(9) 0 SW(0))
+          val1: in std_logic_vector (31 downto 0);     -- switches (SW(9) 0 SW(0))
+          val2: in std_logic_vector (31 downto 0);     -- switches (SW(9) 0 SW(0))
+          result: in std_logic_vector (31 downto 0);     -- switches (SW(9) 0 SW(0))
+          LEDR: out std_logic_vector (9 downto 0);  -- led's
+          HEX0: out std_logic_vector (6 downto 0);	 -- 7-segment display, digit 0
+          HEX1: out std_logic_vector (6 downto 0);	 -- 7-segment display, digit 1
+          HEX2: out std_logic_vector (6 downto 0);	 -- 7-segment display, digit 2
+          HEX3: out std_logic_vector (6 downto 0);	 -- 7-segment display, digit 3
+          HEX4: out std_logic_vector (6 downto 0);	 -- 7-segment display, digit 3
+          HEX5: out std_logic_vector (6 downto 0)
+			 );	  
+
+end entity;
+	 
+architecture rtl of debug is
+  component ALU
+    port (
+          clock_alu: in std_logic;
+			 reset_alu: in std_logic;
+			 val1_alu: out std_logic_vector(31 downto 0);
+			 val2_alu: out std_logic_vector(31 downto 0);
+			 result_alu: out std_logic_vector(31 downto 0);
+);
+  end component;
+  
+  signal  reset       	: std_logic;
+  signal  clock			: std_logic;
+  signal counter_set    : std_logic := '0';
+  signal flipflops      : std_logic_vector(1 downto 0) := (others => '0');
+  signal clk_divide_count1 	: std_logic_vector(31 downto 0) := (others => '0'); 	
+  signal slow_clk1 		: std_logic := '0';	
+  signal counter_out    : std_logic_vector(31 downto 0) := (others => '0'); 	
+  signal val1    : std_logic_vector(31 downto 0) := (others => '0'); 	
+  signal     : std_logic_vector(31 downto 0) := (others => '0'); 	
+  signal counter_out    : std_logic_vector(31 downto 0) := (others => '0'); 	
+  constant counter_size : Integer := 16;
+  signal plusone           : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone1          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone2          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone3          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone4          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone5          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone6          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  signal plusone7          : STD_LOGIC_VECTOR (3 downto 0);	-- this is for 7-segment display
+  
+  
+
+begin
+  reset <= NOT KEY(1);   -- KEY(1) is reset
+
+--*****************************************CLOCK***********************
+--*********************************************************************
+--option 1: key(0) as the clock (need a deboncing circuit)
+--option 2: slow clock (10Hz)
+--option 3: 50MHz clock
+
+
+--option 1: key(0) as the clock (need a deboncing circuit)
+-- reset (clock) key debouncing
+-- KEY(0) as the clock (because 50MHz is too fast)
+-- But it does not work okay; need debouncing circuit
+
+--  clock <= NOT KEY(0);
+  clock <= slow_clk1;
+  counter_set <= flipflops(0) xor flipflops(1);
+
+  process(CLOCK_50)
+  begin
+    if (CLOCK_50'event and CLOCK_50 = '1') then
+      flipflops(0) <= NOT KEY(0);
+      flipflops(1) <= flipflops(0);
+      if (counter_set = '1') then
+        counter_out <= (OTHERS => '0');
+      elsif (counter_out(counter_size) = '0') then
+        counter_out <= counter_out +1;
+      else
+        --clock <= flipflops(1);
+      end if;
+    end if;
+  end process;
+------ reset (clock) key debouncing
+
+
+--option 2: slow clock (10Hz)
+--clk <= slow_clk1;       -- 10Hz clock in the DE10_Lite board
+------ Slow clock begin ------
+  process(CLOCK_50)
+  begin
+ 	 if rising_edge(CLOCK_50) then
+		if (slow_clk1 = '0') then
+			if (clk_divide_count1 >= 200000000) then	--50MHz clock counting to 5 million, therefore slow clock will have period of 0.1s [(1/(50*10^6))*(5*10^6) = 0.1]
+				clk_divide_count1 <= (others => '0');	--Reset clock divider
+				slow_clk1 <= '1';				--Pulse slow_clk for 0.1 s
+			else
+				clk_divide_count1 <= clk_divide_count1 + 1 ;	--Increment clk_divide_count, NB this is not the output counter
+				--slow_clk1 <= '0';
+			end if;
+      end if;
+
+      if (slow_clk1 = '1') then
+		  if (clk_divide_count1 >= 200000000) then  	--50MHz clock counting to 5 million, therefore slow clock will have period of 0.1s [(1/(50*10^6))*(5*10^6) = 0.1]
+	       clk_divide_count1 <= (others => '0');	--Reset clock divider
+		    slow_clk1 <= '0';				--Pulse slow_clk for 0.1s
+	     else
+		    clk_divide_count1 <= clk_divide_count1 + 1 ;	--Increment clk_divide_count, NB this is not the output counter
+			 --slow_clk1 <= '1';
+		  end if;
+      end if;
+	 end if;
+  end process;
+------ Slow clock end ------
+
+    TheLeds : LedsB
+    port map (
+	   clock_Leds=>clock,
+	 	reset_Leds=>reset,
+		SW_Leds=>SW,
+      LEDR_Leds=>LEDR);
+    process (sw, pc, instruction, reset, clock, rd1, rd2, aluout, aluout) 
+	 begin
+	 if (reset = '1') then
+             plusone  <= "0000";
+             plusone1 <= "0000";
+             plusone2 <= "0000";
+             plusone3 <= "0000";
+             plusone4 <= "0000";
+             plusone5 <= "0000";
+             plusone6 <= "0000";
+             plusone7 <= "0000";		
+
+	 -- sw=10000000(00, 01, 10) - PC, instruction, pc4
+	 	 elsif (sw = "1000000000") then 
+             plusone  <= pc(3 downto 0);
+             plusone1 <= pc(7 downto 4);
+             plusone2 <= pc(11 downto 8);
+             plusone3 <= pc(15 downto 12);
+             plusone4 <= pc(19 downto 16);
+             plusone5 <= pc(23 downto 20);
+             plusone6 <= pc(27 downto 24);
+             plusone7 <= pc(31 downto 28);
+
+	 elsif (sw = "1000000001") then
+             plusone  <= instruction(3 downto 0);
+             plusone1 <= instruction(7 downto 4);
+             plusone2 <= instruction(11 downto 8);
+             plusone3 <= instruction(15 downto 12);
+             plusone4 <= instruction(19 downto 16);
+             plusone5 <= instruction(23 downto 20);
+             plusone6 <= instruction(27 downto 24);
+             plusone7 <= instruction(31 downto 28);
+
+	 elsif (sw = "1000000010") then
+             plusone  <= pc4(3 downto 0);
+             plusone1 <= pc4(7 downto 4);
+             plusone2 <= pc4(11 downto 8);
+             plusone3 <= pc4(15 downto 12);
+             plusone4 <= pc4(19 downto 16);
+             plusone5 <= pc4(23 downto 20);
+             plusone6 <= pc4(27 downto 24);
+             plusone7 <= pc4(31 downto 28);
+
+	 -- sw=01000000(00, 01, 10) - rt/rd, rd1, rd2
+	 elsif (sw = "0100000000") then 
+             plusone  <= rt(3 downto 0);
+             plusone1(0) <= rt(4); 
+             plusone1(3 downto 1) <= "000";
+             plusone2 <= "0000";
+             plusone3 <= rd(3 downto 0);
+             plusone4(0) <= rd(4);
+             plusone4(3 downto 1) <= "000";
+             plusone5 <= "0000";
+             ledr <= control;
+
+	 elsif (sw = "0100000001") then
+             plusone  <= rd1(3 downto 0);
+             plusone1 <= rd1(7 downto 4);
+             plusone2 <= rd1(11 downto 8);
+             plusone3 <= rd1(15 downto 12);
+             plusone4 <= rd1(19 downto 16);
+             plusone5 <= rd1(23 downto 20);
+             ledr <= control; 
+
+	 elsif (sw = "0100000010") then
+             plusone  <= rd2(3 downto 0);
+             plusone1 <= rd2(7 downto 4);
+             plusone2 <= rd2(11 downto 8);
+             plusone3 <= rd2(15 downto 12);
+             plusone4 <= rd2(19 downto 16);
+             plusone5 <= rd2(23 downto 20);
+             ledr <= control;
+
+	 -- sw=00100000(01, 11) - ALUOut, rs  was regrd
+	 elsif (sw = "0010000001") then
+             plusone  <= aluout(3 downto 0);
+             plusone1 <= aluout(7 downto 4);
+             plusone2 <= aluout(11 downto 8);
+             plusone3 <= aluout(15 downto 12);
+             plusone4 <= aluout(19 downto 16);
+             plusone5 <= aluout(23 downto 20);
+             ledr <= control;
+
+ 	   elsif (sw = "0010000011") then
+             plusone  <= rs(3 downto 0);
+             plusone1(0) <= rs(4);
+             plusone1(3 downto 1) <= "000";
+             plusone2 <= "0000";
+             plusone3 <= "0000";
+             plusone4 <= "0000";
+             plusone5 <= "0000";
+             ledr <= control;
+
+	 -- sw=0001000001 - memout
+ 	 elsif (sw = "0001000001") then 
+             plusone  <= memout(3 downto 0);
+             plusone1 <= memout(7 downto 4);
+             plusone2 <= memout(11 downto 8);
+             plusone3 <= memout(15 downto 12);
+             plusone4 <= memout(19 downto 16);
+             plusone5 <= memout(23 downto 20);
+             ledr <= control;
+ 	 elsif (sw = "0000100000") then 
+             plusone  <= jumpaddress(3 downto 0);
+             plusone1 <= jumpaddress(7 downto 4);
+             plusone2 <= jumpaddress(11 downto 8);
+             plusone3 <= jumpaddress(15 downto 12);
+             plusone4 <= jumpaddress(19 downto 16);
+             plusone5 <= jumpaddress(23 downto 20);
+             ledr <= control;
+   else
+             plusone  <= "0000";
+             plusone1 <= "0000";
+             plusone2 <= "0000";
+             plusone3 <= "0000";
+             plusone4 <= "0000";
+             plusone5 <= "0000";
+             plusone6 <= "0000";
+             plusone7 <= "0000";	
+		end if;
+	   --end if;
+	 end process;
+	 
+    h0: hex port map(plusone, o => hex0);      -- display on ledr(7:0) & hex5~0
+    h1: hex port map(plusone1, o => hex1);
+    h2: hex port map(plusone2, o => hex2);
+    h3: hex port map(plusone3, o => hex3); 
+    h4: hex port map(plusone4, o => hex4);    
+    h5: hex port map(plusone5, o => hex5);    
+	 
+end architecture;
